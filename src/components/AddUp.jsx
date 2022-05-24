@@ -1,12 +1,11 @@
 import React from "react";
+import { connect } from "react-redux";
 
 import Card from "./Card";
 
+const AddUp = props =>{
 
-export default props =>{
-
-    let max = props.max;
-    let min = props.min;
+    let {min, max} = props
 
     return(
 
@@ -14,7 +13,7 @@ export default props =>{
             <div className="AddUp">
                 <span>
                     <span>Resultado:</span>
-                    <strong>{max+min}</strong>
+                    <strong>{min+max}</strong>
                 </span>
 
             </div>
@@ -22,3 +21,17 @@ export default props =>{
     )
     
 }
+
+const mapStateToProps = state =>{
+
+    return{
+
+        min: state.numbers.min,
+        max: state.numbers.max
+
+    }
+
+}
+
+
+export default connect(mapStateToProps)(AddUp)

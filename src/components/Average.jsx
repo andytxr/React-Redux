@@ -1,12 +1,12 @@
 import React from "react";
+import { connect } from 'react-redux';
 
 import Card from "./Card";
 
+const Average = props => {
 
-export default props => {
+    let {min, max} = props;
 
-    let min = props.min;
-    let max = props.max;
 
     return(
 
@@ -22,3 +22,16 @@ export default props => {
     )
 
 }
+
+const mapStateToProps = state => {
+
+    return{
+
+        min: state.numbers.min,
+        max: state.numbers.max
+
+    }
+
+}
+
+export default connect(mapStateToProps)(Average)
