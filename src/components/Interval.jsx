@@ -10,6 +10,12 @@ const Interval = props =>{
 
     let {min, max} = props;
 
+    if(min>=max){
+
+        props.changeMin(max-1);
+        
+    }
+
     return(
         
         <Card title="Intervalo de Números" red>
