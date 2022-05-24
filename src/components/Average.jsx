@@ -2,9 +2,11 @@ import React from "react";
 
 import Card from "./Card";
 
-import './Average.css';
 
 export default props => {
+
+    let min = props.min;
+    let max = props.max;
 
     return(
 
@@ -12,7 +14,7 @@ export default props => {
             <div className="Average">
                 <span>
                     <span>Resultado:</span>
-                    <strong>5</strong>
+                    <strong>{((max+min)/2).toFixed(2)}</strong>
                 </span>
             </div>
         </Card>
