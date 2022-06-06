@@ -15,6 +15,12 @@ const Interval = props =>{
         props.changeMin(max-1);
         
     }
+    
+    if(max<=min){
+
+        props.changeMax(min+1);
+
+    }
 
     return(
         
